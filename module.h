@@ -40,7 +40,7 @@ public:
 
 	const string getTechName()			{ return _techName; }
 	const int getDiePosX1()				{ return _dieSize[0].first; }
-	const int getDiePosY1()				{ return _dieSize[0].secnd; }
+	const int getDiePosY1()				{ return _dieSize[0].second; }
 	const int getDiePosX2()				{ return _dieSize[1].first; }
 	const int getDiePosY2()				{ return _dieSize[1].second; }
 	const int getRowPosX()				{ return _rowInfo[0]; }
