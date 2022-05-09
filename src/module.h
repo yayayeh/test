@@ -11,8 +11,7 @@ using namespace std;
 class Libcell
 {
 public:
-	Libcell(string& name, int width, int height ,int pinCount) :
-		_name(name), _width(width), _height(height), _pinCount(pinCount) { }
+	Libcell(string& name, int width, int height ,int pinCount) :_name(name), _width(width), _height(height), _pinCount(pinCount) { }
 	~Libcell()  { }
 
 	const string getName()				{ return _name; }
@@ -34,8 +33,10 @@ protected:
 class Die
 {
 public:
-	Die(string& techName) :
-		_techName(name) { }
+	Die(string& techName) :_techName(name) {
+		_dieSize = vectpr<pair<int,int>>(2);
+		_rowInfo = vector<int>(5);
+		}
 	~Die() { }
 
 	const string getTechName()			{ return _techName; }
@@ -70,8 +71,7 @@ private:
 class Instance : public Pin
 {
 public:
-	Instance(string& name) :
-		Pin(name, 0, 0), _tb(0) { 
+	Instance(string& name) : Pin(name, 0, 0), _tb(0) { 
 	}
 	~Instance() { }
 
@@ -91,8 +91,7 @@ private:
 class Net
 {
 public:
-    Net(string name, int pinnum) :
-	_name(name), _pinNum(pinnum) {
+    Net(string name, int pinnum) :_name(name), _pinNum(pinnum) {
 	}
     ~Net()  { }
 
@@ -111,8 +110,7 @@ private:
 class Pin
 {
 public:
-    Pin(string name, int x, int y) :
-	_name(name), _x(x), _y(y) {
+    Pin(string name, int x, int y) :_name(name), _x(x), _y(y) {
 	}
     ~Pin()  { }
 
