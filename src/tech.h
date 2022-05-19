@@ -19,7 +19,7 @@ public:
 	~Tech() {
 	}
 
-	int 	getTechNum() const				{ return _techNum; }
+	int 	getTechNum() const			{ return _techNum; }
 	const 	vector<Net*> getNets()			{ return _nets; }
 	
 	//void reportLibCell() const;
@@ -32,12 +32,12 @@ public:
 	void parseOutput(fstream& outfile);
 	
 private:
-	int									_techNum;
+	int					_techNum;
 	map<string,map<string,Libcell>>		_libCell;
-	map<string,Instance>				_instances;
-	vector<Die>							_dies;		//[0]:top
-	vector<int>							_termInfo;	//width,height,spacing
-	vector<Net>							_nets;
+	map<string,Instance>			_instances;
+	vector<Die>				_dies;		//[0]:top
+	vector<int>				_termInfo;	//width,height,spacing
+	vector<Net>				_nets;
 };
 
 #endif

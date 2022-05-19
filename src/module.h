@@ -23,10 +23,10 @@ public:
 	void addPin(string name,Pin pin)	{ _pins.insert( pair<string,Pin>(name,pin) ); }
 
 protected:
-	string				_name;
-	int					_width;    
-	int					_height;
-	int  		  		_pinCount;
+	string			_name;
+	int			_width;    
+	int			_height;
+	int  		  	_pinCount;
 	map<string,Pin>		_pins;
 };
 
@@ -53,7 +53,7 @@ public:
 	
 	void setMaxUtil(double maxUtil) 	{ _maxUtil = maxUtil }
 	void setDieSize(int x1,int y1,int x2,int y2) { 
-	_dieSize[0] = make_pair(x1,y1);		_dieSize[1] = make_pair(x2,y2);
+		_dieSize[0] = make_pair(x1,y1);		_dieSize[1] = make_pair(x2,y2);
 	}
 	void setRow(int posX, int posY, int length, int height, int count) {
 		vector[0] = posX;	vector[1] = posY;	vector[2] = length;
@@ -62,8 +62,8 @@ public:
 
 private:
 	string 					_techName;
-    vector<pair<int,int>>	_dieSize = vector<pair<int,int>>(2);	//[0]:(x1,y1),[1]:(x2,y2) 
-	vector<int>				_rowInfo = vector<int>(5);				//x,y,length,height,count
+    	vector<pair<int,int>>			_dieSize = vector<pair<int,int>>(2);	//[0]:(x1,y1),[1]:(x2,y2) 
+	vector<int>				_rowInfo = vector<int>(5);		//x,y,length,height,count
 	double					_maxUtil;	
 };
 
@@ -75,10 +75,10 @@ public:
 	}
 	~Instance() { }
 
-	const string getTechName()			{ return _techName; }
-	const int getTb()					{ return _tb; }
+	const string getTechName()		{ return _techName; }
+	const int getTb()			{ return _tb; }
 	
-	void setTb(int tb) 					{ _tb = tb; }
+	void setTb(int tb) 			{ _tb = tb; }
 	void setTechName(string techName) 	{ _techName = techName; }
 	
 private:
@@ -95,15 +95,15 @@ public:
 	}
     ~Net()  { }
 
-	const string getNetName()						{ return _name; }
-	const int getPinNum()							{ return _pinNum; }
+	const string getNetName()			{ return _name; }
+	const int getPinNum()				{ return _pinNum; }
 	const vector<pair<string,string>> getWireList()	{ return _connections; }
 	
-	void addConnect(pair<string,string> wire)		{ _connections.push_back(wire); }
+	void addConnect(pair<string,string> wire)	{ _connections.push_back(wire); }
 	
 private:
-	string							_name;
-	int								_pinNum;
+	string					_name;
+	int					_pinNum;
 	vector<pair<string,string>>		_connections;
 };
 
@@ -115,8 +115,8 @@ public:
     ~Pin()  { }
 
 	const string getName()		{ return _name; }
-	const int getPosX()			{ return _x }
-	const int getPosY()			{ return _y }
+	const int getPosX()		{ return _x }
+	const int getPosY()		{ return _y }
 	
 	void setName(string name) 	{ _name = name; }
 	void setPos(int x, int y)	{
@@ -125,8 +125,8 @@ public:
 
 private:
 	string		_name;
-	int			_x;
-	int			_y;
+	int		_x;
+	int		_y;
 };
 
 #endif  // MODULE_H
